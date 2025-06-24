@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+<h1>Register</h1>
+<form method="POST" action="{% url 'register' %}">
+  {% csrf_token %} {{form.as_p}} {% comment %}
+  <div class="mb-3">
+    <input
+      type="text"
+      class="form-control"
+      name="username"
+      placeholder="Username"
+    />
+  </div>
+  <div class="mb-3">
+    <input
+      type="password"
+      class="form-control"
+      name="password"
+      placeholder="Password"
+    />
+  </div>
+  {% endcomment %}
+  <button type="submit" class="btn btn-secondary">Register</button>
+</form>
+{% endblock content %}

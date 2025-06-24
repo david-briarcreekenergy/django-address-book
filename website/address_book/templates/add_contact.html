@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block content %}
+<h1>Add Contact</h1>
+
+{% comment %} enctype required because uploading file, in this case an
+image{%endcomment %}
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit" class="btn btn-secondary">Add Contact</button>
+</form>
+
+{% endblock content %}

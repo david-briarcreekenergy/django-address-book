@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    {% if contact.image %}
+    <img src="{{contact.image.url}}" class="card-img-top" alt="..." />
+
+    {% endif %}
+    <h5 class="card-title">{{contact.last_name}}, {{contact.first_name}}</h5>
+    <p class="card-text">{{contact.email}}</p>
+    <p class="card-text">{{contact.address}}</p>
+    <p class="card-text">
+      {{contact.city}}, {{contact.state}} {{contact.zipcode}}
+    </p>
+    <a href="{% url 'home' %}" class="btn btn-outline-secondary">Back</a>
+    <a href="{% url 'delete' contact.id %}" class="btn btn-danger">Delete</a>
+  </div>
+</div>
+<form method="post">
+  {% csrf_token %} {{form.as_p}}
+  <button type="submit" class="btn btn-secondary">Update</button>
+</form>
+{% endblock content %}
