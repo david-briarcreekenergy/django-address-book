@@ -32,11 +32,13 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = (
-    os.environ.get("ALLOWED_HOSTS", "").split(",")
-    if os.environ.get("ALLOWED_HOSTS")
-    else ["*"]
-)
+# ALLOWED_HOSTS = (
+#     os.environ.get("ALLOWED_HOSTS", "").split(",")
+#     if os.environ.get("ALLOWED_HOSTS")
+#     else ["*"]
+# )
+ALLOWED_HOSTS = ["django-address-book.railway.internal"]
+CSRF_TRUSTED_ORIGINS = ["HTTPS://django-address-book.railway.internal"]
 
 
 # Application definition
