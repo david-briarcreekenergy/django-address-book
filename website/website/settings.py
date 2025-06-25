@@ -37,8 +37,8 @@ DEBUG = os.environ.get("DEBUG", "True").lower() == "true"
 #     if os.environ.get("ALLOWED_HOSTS")
 #     else ["*"]
 # )
-ALLOWED_HOSTS = ["django-address-book.railway.internal"]
-CSRF_TRUSTED_ORIGINS = ["HTTPS://django-address-book.railway.internal"]
+ALLOWED_HOSTS = ["django-address-book-production-69bd.up.railway.app"]
+CSRF_TRUSTED_ORIGINS = ["https://django-address-book-production-69bd.up.railway.app"]
 
 
 # Application definition
